@@ -58,8 +58,7 @@ jobs:
             echo "LABEL org.opencontainers.image.url=\"https://github.com/varunsridharan/actions-alpine/\"" >> ./${{matrix.dockerinfo.file}}
             echo "LABEL org.opencontainers.image.documentation=\"https://github.com/${GITHUB_REPOSITORY}/\"" >> ./${{matrix.dockerinfo.file}}
             echo "LABEL org.opencontainers.image.vendor=\"Varun Sridharan\"" >> ./${{matrix.dockerinfo.file}}
-
-          cat ./${{matrix.dockerinfo.file}}
+            cat ./${{matrix.dockerinfo.file}}
 
       - name: "⚡ Docker QEMU"
         uses: docker/setup-qemu-action@master
