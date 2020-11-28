@@ -1,6 +1,6 @@
 <?php
-#define( 'BASE_PATH', $_ENV['GITHUB_WORKSPACE'] );
-define( 'BASE_PATH', __DIR__ . './../../' );
+define( 'BASE_PATH', $_ENV['GITHUB_WORKSPACE'] );
+//define( 'BASE_PATH', __DIR__ . './../../' );
 
 $paths  = glob( BASE_PATH . '*/*' );
 $return = array();
