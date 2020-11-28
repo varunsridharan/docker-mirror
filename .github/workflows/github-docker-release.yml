@@ -5,6 +5,9 @@ env:
   VS_WORKFLOW_TYPE: "github-docker-release"
 
 on:
+  schedule:
+    - cron: '0 0 * * *'
+
   workflow_dispatch:
   push:
     branches:
@@ -15,12 +18,12 @@ on:
 
 jobs:
   publish-github-docker:
-    name: "🚀  ${{ matrix.php }}-${{ matrix.http }} - Publisher"
+    name: "🚀  ${{ matrix.php }}-${{ matrix.imagetype }} - Publisher"
     runs-on: ubuntu-latest
     strategy:
       matrix:
         php: [ 7.1, 7.2, 7.3, 7.4 ]
-        http: [ apache ]
+        imagetype: [ apache , cli ]
     steps:
       - name: "📥  Fetching Repository Contents"
         uses: actions/checkout@main
@@ -60,10 +63,10 @@ jobs:
       - name: "🎉  Build &  🚀  Publish"
         uses: docker/build-push-action@master
         with:
-          file: ./php-${{ matrix.php }}-${{ matrix.http }}
+          file: ./php-${{ matrix.php }}-${{ matrix.imagetype }}
           push: true
           tags: |
-            ghcr.io/${{ env.REPOSITORY_OWNER }}/php-webserver:${{ matrix.php }}-${{ matrix.http }}
+            ghcr.io/${{ env.REPOSITORY_OWNER }}/php-webserver:${{ matrix.php }}-${{ matrix.imagetype }}
 
       - name: "⚡  Repository - After Hook"
         run: |
