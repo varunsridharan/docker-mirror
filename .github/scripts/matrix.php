@@ -16,3 +16,5 @@ foreach ( $paths as $path ) {
 $return = json_encode( $return );
 
 echo "::set-output name=dockerinfo::$return";
+
+echo $return;
