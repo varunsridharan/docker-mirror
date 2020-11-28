@@ -1,0 +1,23 @@
+name: "🐳 Mirror"
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  docker_matrix_generator:
+    name: "🐳 Mirror Matrix Generator"
+    runs-on: ubuntu-latest
+    outputs:
+      dockerinfo: ${{ steps.step1.outputs.dockerinfo }}
+    steps:
+      - name: "📥  Fetching Repository Contents"
+        uses: actions/checkout@main
+
+      - run: php .github/scripts/matrix.php
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+      - run: echo ${{fromJSON(needs.job1.outputs.dockerinfo)}}
