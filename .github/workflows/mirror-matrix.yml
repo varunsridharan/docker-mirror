@@ -52,10 +52,11 @@ jobs:
 
       - name: "⚡ Setup DockerFile"
         run: |
+            echo " " >> ./${{matrix.dockerinfo.file}}
             echo "LABEL maintainer=\"Varun Sridharan<varunsridharan23@gmail.com>\"" >> ./${{matrix.dockerinfo.file}}
             echo "LABEL org.opencontainers.image.source=\"https://github.com/${GITHUB_REPOSITORY}/\"" >> ./${{matrix.dockerinfo.file}}
             echo "LABEL org.opencontainers.image.authors=\"Varun Sridharan <varunsridharan23@gmail.com>\"" >> ./${{matrix.dockerinfo.file}}
-            echo "LABEL org.opencontainers.image.url=\"https://github.com/varunsridharan/actions-alpine/\"" >> ./${{matrix.dockerinfo.file}}
+            echo "LABEL org.opencontainers.image.url=\"https://github.com/${GITHUB_REPOSITORY}/\"" >> ./${{matrix.dockerinfo.file}}
             echo "LABEL org.opencontainers.image.documentation=\"https://github.com/${GITHUB_REPOSITORY}/\"" >> ./${{matrix.dockerinfo.file}}
             echo "LABEL org.opencontainers.image.vendor=\"Varun Sridharan\"" >> ./${{matrix.dockerinfo.file}}
             cat ./${{matrix.dockerinfo.file}}
