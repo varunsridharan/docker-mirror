@@ -66,7 +66,7 @@ jobs:
           file: ./php-${{ matrix.php }}-${{ matrix.imagetype }}
           push: true
           tags: |
-            ghcr.io/${{ env.REPOSITORY_OWNER }}/php-webserver:${{ matrix.php }}-${{ matrix.imagetype }}
+            ghcr.io/${{ env.REPOSITORY_OWNER }}/php:${{ matrix.php }}-${{ matrix.imagetype }}
 
       - name: "⚡  Repository - After Hook"
         run: |
