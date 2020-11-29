@@ -1,6 +1,6 @@
-# PHP Docker Image Mirror
-This repository mirros major PHP Docker images from Docker HUB to Github Container Registry. 
-Its created due to the recent changes to the dowload limits in [Docker Hub](https://www.docker.com/increase-rate-limits
+# Docker Mirror
+This repository mirros all the docker images to Github Container Registry.  which i use in my local / production env
+Its created due to the recent changes to the download limits in [Docker Hub](https://www.docker.com/increase-rate-limits
 
 
 ## Webserver - Apache
