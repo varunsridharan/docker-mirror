@@ -15,3 +15,6 @@ Its created due to the recent changes to the dowload limits in [Docker Hub](http
 * [php:7.3-cli](https://hub.docker.com/_/php?tab=tags&page=1&name=7.3-cli) - `ghcr.io/varunsridharan/php:7.2-cli`
 * [php:7.2-cli](https://hub.docker.com/_/php?tab=tags&page=1&name=7.2-cli) - `ghcr.io/varunsridharan/php:7.2-cli`
 * [php:7.1-cli](https://hub.docker.com/_/php?tab=tags&page=1&name=7.1-cli) - `ghcr.io/varunsridharan/php:7.2-cli`
+
+## Apache Guacamole
+* [oznu/docker-guacamole](https://www.github.com/oznu/docker-guacamole) - `ghcr.io/varunsridharan/guacamole:oznu-latest`
